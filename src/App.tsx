@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Button } from '@material-ui/core';
 import { Product } from './data-models';
+import { ProductCard } from './components';
 
 const myFirstProduct: Product = {
   id: '1',
@@ -11,28 +12,13 @@ const myFirstProduct: Product = {
   description: 'This is my first product',
 };
 
-type ProductComponentProps = {
-  product: Product;
-};
-
-const ProductComponent = (props: ProductComponentProps) => {
-  const { product } = props;
-
-  return (
-    <div>
-      <h1>{product.title}</h1>
-      <p>{product.description}</p>
-    </div>
-  );
-};
-
 const App = () => {
   return (
-    <div className='App'>
+    <div>
       <Button color='primary' variant='contained'>
         Some text
       </Button>
-      <ProductComponent product={myFirstProduct} />
+      <ProductCard product={myFirstProduct} />
     </div>
   );
 };
